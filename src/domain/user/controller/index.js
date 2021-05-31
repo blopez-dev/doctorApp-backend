@@ -1,33 +1,30 @@
-// import HeroService from '../services';
+import UserService from '../services';
 
 export const getAll = async (req, res) => {
-  // const heroes = await HeroService().getAll();
-  res.json([]);
+  const users = await UserService().getAll();
+  res.json(users);
 }
-/*
+
 export const createOne = async (req, res) => {
   const { body } = req;
-  console.log(body);
-  const hero = await HeroService().create({ name: 'sdfdsf' });
+  const hero = await UserService().create(body);
   res.json(hero);
 }
 
 export const getById = async (req, res) => {
   const { params: { id } } = req;
-  const hero = await HeroService().getById(id);
+  const hero = await UserService().getById(id);
   res.json(hero);
 }
 
 export const updateById = async (req, res) => {
-  const { body, params: { id } } = req;
-  const hero = await HeroService().updateById(body);
+  const { params: { id } } = req;
+  const hero = await UserService().updateById(id);
   res.json(hero);
 }
 
 export const deleteById = async (req, res) => {
   const { params: { id } } = req;
-  await HeroService().deleteById(body);
+  await UserService().deleteById(id);
   res.status(200).send();
 }
-
-*/

@@ -1,7 +1,7 @@
-import Heroes from './Medical/routes';
+import Users from './user/routes';
 
 const Controllers = (app) => {
-  Heroes(app);
+  Users(app);
 };
 
 export default Controllers;

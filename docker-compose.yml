@@ -21,7 +21,7 @@ services:
     command: npm run start-local
     working_dir: /app
     ports:
-      - "3333:3333"
+      - "6080:6080"
     restart: always
     env_file: .env
 

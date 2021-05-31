@@ -11,7 +11,7 @@ const paths = {
 };
 
 const plugins = isProduction ? [] : [
-  new NodemonPlugin(),
+  new NodemonPlugin({ legacyWatch: true }),
   new Dotenv({ path: './.env', systemvars: true }),
 ];
 
@@ -35,6 +35,17 @@ module.exports = {
         use: 'babel-loader',
       },
     ],
+  },
+  resolve: {
+    extensions: ['.js', '.jsx'],
+    alias: {
+      '@Application': path.resolve(__dirname, './src/application/'),
+      '@Common': path.resolve(__dirname, './src/common/'),
+      '@Config': path.resolve(__dirname, './src/application/config/'),
+      '@Domain': path.resolve(__dirname, './src/domain/'),
+      '@Adapters': path.resolve(__dirname, './src/common/adapters/'),
+      '@Base': path.resolve(__dirname, './src/'),
+    },
   },
   plugins,
   externals: [webpackNodeExternals()],

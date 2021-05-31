@@ -1,4 +1,4 @@
-import { Sequelize } from 'sequelize';
+import { Sequelize, DataTypes } from 'sequelize';
 
 const { DATABASE_URL } = process.env;
 const { DB_HOST } = process.env;
@@ -18,6 +18,8 @@ const options = {
   },
 };
 
-const db = new Sequelize(uri, options);
+export { DataTypes };
 
-export const Connect = () => db.authenticate().then(() => console.log('Connected!'));
+export const db = new Sequelize(uri, options);
+
+export const Connect = () => db.authenticate().then(() => db.sync());
