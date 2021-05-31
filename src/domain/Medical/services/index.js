@@ -1,4 +1,4 @@
-import getHeroModel from '../model/index.js';
+import getHeroModel from '../model';
 
 const HeroService = () => {
   const HeroModel = getHeroModel();

@@ -1,4 +1,4 @@
-// import HeroService from '../services/index.js';
+// import HeroService from '../services';
 
 export const getAll = async (req, res) => {
   // const heroes = await HeroService().getAll();

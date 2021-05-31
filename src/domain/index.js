@@ -1,4 +1,4 @@
-import Heroes from './Medical/routes/index.js';
+import Heroes from './Medical/routes';
 
 const Controllers = (app) => {
   Heroes(app);

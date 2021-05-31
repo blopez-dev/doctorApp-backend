@@ -1,8 +1,8 @@
 import express from 'express';
-import Middlewares from './application/middlewares/index.js';
-import Server from './application/server/index.js';
-import { Connect } from './common/adapter/database/index.js';
-import Controllers from './domain/index.js';
+import Middlewares from './application/middlewares';
+import Server from './application/server';
+import { Connect } from './common/adapter/database';
+import Controllers from './domain';
 
 const app = express();
 
