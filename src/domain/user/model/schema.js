@@ -5,10 +5,7 @@ const UserModel = db.define('user', {
       type: DataTypes.STRING,
       unique: true,
     },
-    name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
+    name: DataTypes.STRING,
     email: {
       type: DataTypes.STRING,
       isEmail: true,
@@ -18,6 +15,24 @@ const UserModel = db.define('user', {
       type: DataTypes.STRING,
       defaultValue: '',
     },
+    isAdmin: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false,
+    },
+    phone: {
+      type: DataTypes.STRING,
+      defaultValue: '',
+    },
+    description: {
+      type: DataTypes.STRING,
+      defaultValue: '',
+    },
+    rating: {
+      type: DataTypes.INTEGER,
+      defaultValue: 0,
+    },
+    startTime: DataTypes.DATE,
+    endTime: DataTypes.DATE
   }
 );
 

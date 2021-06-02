@@ -18,6 +18,9 @@ const UserService = () => {
     create(data) {
       return UserModel.create(data);
     },
+    findOrCreate(authId, email) {
+      return UserModel.findOrCreate(authId, email);
+    },
   });
 };
 

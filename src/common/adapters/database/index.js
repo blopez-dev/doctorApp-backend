@@ -16,10 +16,11 @@ const options = {
     native: true,
     ...ssl,
   },
+  logging: false,
 };
 
 export { DataTypes };
 
 export const db = new Sequelize(uri, options);
 
-export const Connect = () => db.authenticate().then(() => db.sync());
+export const Connect = (Seed) => db.authenticate().then(() => db.sync({ force: true })).then(Seed);

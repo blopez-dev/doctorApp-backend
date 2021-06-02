@@ -3,7 +3,6 @@ import { getAll, createOne, getById, updateById, deleteById } from '../controlle
 
 const routes = Router();
 
-
 routes
   .route('/')
   .get(getAll)
@@ -15,4 +14,4 @@ routes
   .put(updateById)
   .delete(deleteById);
 
-export default app => app.use('/users', routes);
+export default app => app.use('/patients', routes);
