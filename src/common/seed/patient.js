@@ -8,6 +8,9 @@ const patients = new Array(10).fill(null).map((patient, index) => ({
   email: internet.email(),
   phone: phone.phoneNumber(),
   address: address.streetAddress(),
+  clinicalHistory: [{
+    patology: 'Covid'
+  }]
 }));
 
 const seedPatients = () => PatientService().createMany(patients);

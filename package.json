@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start-local": "webpack --watch --mode=development",
-    "start-docker": "docker-compose up",
+    "start-docker": "docker-compose up --force-recreate",
     "clean-docker": "docker-compose down && docker-compose down --volumes",
     "start": "node ./build/bundle.js",
     "build": "webpack --mode=production"

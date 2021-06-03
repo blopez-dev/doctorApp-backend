@@ -11,6 +11,14 @@ const { DB_SSL } = process.env;
 const uri = DATABASE_URL || `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_DATABASE}`;
 const ssl = DB_SSL === 'true' ? { ssl: { rejectUnauthorized: false } } : {};
 
+export const setAssociations = (db) => {
+  Object.keys(db.models).forEach((modelName) => {
+    if ('associate' in db.models[modelName]) {
+      db.models[modelName].associate(db.models);
+    }
+  });
+};
+
 const options = {
   dialectOptions: {
     native: true,
@@ -23,4 +31,7 @@ export { DataTypes };
 
 export const db = new Sequelize(uri, options);
 
-export const Connect = (Seed) => db.authenticate().then(() => db.sync({ force: true })).then(Seed);
+export const Connect = (Seed) => {
+  setAssociations(db);
+  return db.authenticate().then(() => db.sync({ force: true })).then(Seed);
+}

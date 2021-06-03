@@ -21,6 +21,9 @@ const UserService = () => {
     findOrCreate(authId, email) {
       return UserModel.findOrCreate(authId, email);
     },
+    createMany(data) {
+      return UserModel.createMany(data);
+    },
   });
 };
 

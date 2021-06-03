@@ -24,4 +24,8 @@ const PatientModel = db.define('patient', {
   }
 );
 
+PatientModel.associate = ({ clinicalHistory }) => {
+  PatientModel.hasMany(clinicalHistory);
+};
+
 export default PatientModel;
