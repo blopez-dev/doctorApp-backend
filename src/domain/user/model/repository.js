@@ -1,6 +1,5 @@
 import getGenericRepository from '../../../common/repositories/generic-repository';
 import UserModel from './schema.js';
-import {where} from "sequelize";
 
 const UserRepository = () => ({
   ...getGenericRepository(UserModel),

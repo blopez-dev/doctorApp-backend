@@ -3,7 +3,7 @@ import getUserModel from '../model';
 const UserService = () => {
   const UserModel = getUserModel();
   return ({
-    getAll(page = 1, limit = 15) {
+    getAll(page = 1, limit = 10) {
       return UserModel.getAll(page, limit);
     },
     getById(id) {

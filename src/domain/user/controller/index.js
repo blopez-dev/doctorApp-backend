@@ -13,9 +13,14 @@ export const createOne = async (req, res) => {
 }
 
 export const getById = async (req, res) => {
-  const { params: { id } } = req;
-  const user = await UserService().getById(id);
-  res.json(user);
+  try{
+    const { body } = req;
+    console.log('the body ', JSON.stringify(body));
+    const user = await UserService().getById(id);
+    res.json(user);
+  }catch (error){
+    console.log(error);
+  }
 }
 
 export const updateById = async (req, res) => {

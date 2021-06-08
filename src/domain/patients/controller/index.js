@@ -1,9 +1,10 @@
 import PatientService from '../services';
 
 export const getAll = async (req, res) => {
-
-  const users = await PatientService().getAll();
-  res.json(users);
+  const { page, limit } = req.query;
+  const patients = await PatientService().getAll(page, limit);
+  console.log(patients);
+  res.json(patients);
 }
 
 export const createOne = async (req, res) => {
