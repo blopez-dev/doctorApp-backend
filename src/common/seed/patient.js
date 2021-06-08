@@ -1,15 +1,15 @@
 import faker from 'faker';
 import PatientService from "@Domain/patients/services";
 
-const { phone, internet, address, name } = faker;
+const { name ,internet, phone, address} = faker;
 
-const patients = new Array(10).fill(null).map((patient, index) => ({
+const patients = new Array(150).fill(null).map((patient, index) => ({
   name: name.findName(),
   email: internet.email(),
   phone: phone.phoneNumber(),
   address: address.streetAddress(),
   clinicalHistory: [{
-    patology: 'Covid'
+    patology: 'Covid 19'
   }]
 }));
 

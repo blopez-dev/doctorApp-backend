@@ -1,7 +1,8 @@
 import UserService from '../services';
 
 export const getAll = async (req, res) => {
-  const users = await UserService().getAll();
+  const { page, limit } = req.query;
+  const users = await UserService().getAll(page, limit);
   res.json(users);
 }
 

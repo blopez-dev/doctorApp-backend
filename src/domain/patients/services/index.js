@@ -3,8 +3,8 @@ import getPatientModel from '../model';
 const PatientService = () => {
   const PatientModel = getPatientModel();
   return ({
-    getAll() {
-      return PatientModel.getAll();
+    getAll(page = 1, limit = 15) {
+      return PatientModel.getAll(page, limit);
     },
     getById(id) {
       return PatientModel.getById(id);

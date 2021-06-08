@@ -14,4 +14,4 @@ routes
   .put(updateById)
   .delete(deleteById);
 
-export default app => app.use('/users', routes);
+export default app => app.use('/rooms', routes);
