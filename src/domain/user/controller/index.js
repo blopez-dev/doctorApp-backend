@@ -1,8 +1,8 @@
 import UserService from '../services';
 
 export const getAll = async (req, res) => {
-  const { page, limit } = req.query;
-  const users = await UserService().getAll(page, limit);
+  const { page, limit, ...filters } = req.query;
+  const users = await UserService().getAll(page, limit, filters);
   res.json(users);
 }
 
@@ -14,11 +14,10 @@ export const createOne = async (req, res) => {
 
 export const getById = async (req, res) => {
   try{
-    const { body } = req;
-    console.log('the body ', JSON.stringify(body));
+    const { params: { id } } = req;
     const user = await UserService().getById(id);
     res.json(user);
-  }catch (error){
+  } catch (error){
     console.log(error);
   }
 }

@@ -27,6 +27,10 @@ const UserModel = db.define('user', {
       type: DataTypes.STRING,
       defaultValue: '',
     },
+    specialty: {
+      type: DataTypes.STRING,
+      defaultValue: '',
+    },
     rating: {
       type: DataTypes.INTEGER,
       defaultValue: 0,

@@ -1,4 +1,4 @@
-import { Sequelize, DataTypes } from 'sequelize';
+import { Sequelize, DataTypes, Op } from 'sequelize';
 
 const { DATABASE_URL } = process.env;
 const { DB_HOST } = process.env;
@@ -27,7 +27,7 @@ const options = {
   logging: false,
 };
 
-export { DataTypes };
+export { DataTypes, Op };
 
 export const db = new Sequelize(uri, options);
 

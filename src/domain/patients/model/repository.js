@@ -4,7 +4,7 @@ import PatientModel from './schema.js';
 
 const PatientRepository = () => ({
   ...getGenericRepository(PatientModel),
-  getAll: (page, limit) => PatientModel.findAll({ include: ClinicalHistoryModel, order: ['name'], limit, offset: page }),
+  getAll: (page, limit) => PatientModel.findAndCountAll({ include: ClinicalHistoryModel, order: ['id'], limit, offset: page }),
 });
 
 export default PatientRepository;
