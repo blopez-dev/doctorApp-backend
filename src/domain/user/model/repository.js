@@ -16,7 +16,6 @@ const searchQuery = (offset, limit, filters = {}) => filters.search ? {
 const UserRepository = () => ({
   ...getGenericRepository(UserModel),
   getAll: (offset, limit, filters) => UserModel.findAndCountAll({ order: ['name'], ...searchQuery(offset, limit, filters) }),
-  getById: (id) => UserModel.findByPk(id),
   findOrCreate: (authProviderId, email) => UserModel.findOrCreate({ where: { authProviderId }, defaults: { authProviderId, email } }),
 });
 

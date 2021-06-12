@@ -33,5 +33,5 @@ export const db = new Sequelize(uri, options);
 
 export const Connect = (Seed) => {
   setAssociations(db);
-  return db.authenticate().then(() => db.sync({ force: true })).then(Seed);
+  return db.authenticate().then(() => db.sync()).then(Seed);
 }
