@@ -11,7 +11,7 @@ routes
 routes
   .route('/:id')
   .get(getById)
-  .put(updateById)
+  .patch(updateById)
   .delete(deleteById);
 
 export default app => app.use('/patients', routes);

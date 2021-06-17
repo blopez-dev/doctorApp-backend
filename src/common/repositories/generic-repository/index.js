@@ -12,7 +12,7 @@ const GenericRepository = Model => ({
     return Model.findOne({ where: { id, ...options } });
   },
   async updateById(id, data, options = {}, config = {}) {
-    return Model.update(data, { where: { id, ...options }, ...config, returning: true });
+    return Model.update(data, { where: { id, ...options }, ...config, returning: true, plain:true });
   },
   deleteById(id, options = {}) {
     return Model.destroy({ where: { id, ...options } });
